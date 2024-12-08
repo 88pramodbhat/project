@@ -3,84 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pramod Bhat's Portfolio</title>
-    <link rel="stylesheet" href="css/styles.css">
+    <title>Portfolio - Pramod Bhat</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f9;
+            color: #333;
+            padding: 0 20px;
+        }
+
+        header {
+            text-align: center;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            color: white;
+            padding: 50px 20px;
+            border-radius: 10px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            font-size: 1.2rem;
+            font-style: italic;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 1.8rem;
+            color: #6a11cb;
+            border-bottom: 2px solid #6a11cb;
+            display: inline-block;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        ul li {
+            padding: 10px;
+            margin-bottom: 10px;
+            background: #f4f4f9;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        ul li strong {
+            color: #2575fc;
+        }
+
+        a {
+            text-decoration: none;
+            color: #2575fc;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #6a11cb;
+        }
+
+        dl dt {
+            font-weight: bold;
+            margin-top: 10px;
+            color: #2575fc;
+        }
+
+        dl dd {
+            margin-left: 20px;
+            margin-bottom: 10px;
+        }
+
+        blockquote {
+            font-style: italic;
+            color: #555;
+            background: #f4f4f9;
+            padding: 15px 20px;
+            border-left: 4px solid #6a11cb;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        /* Footer for extra polish */
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px 0;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>🌆 Solivita City</h1>
-        <p>I am passionate about <strong>technology</strong> and <strong>problem-solving</strong>. Here's a glimpse of my work:</p>
+        <h1>Hello, I'm Pramod Bhat 👋</h1>
+        <p>I am passionate about technology and problem-solving</p>
     </header>
 
-    <section id="projects">
+    <section>
         <h2>🛠️ Projects</h2>
-        <h3><strong>CITY DESIGN SOLIVITA</strong></h3>
-        <p>A creative project focused on designing and optimizing urban environments.</p>
-    </section>
+        <ul>
+            <li><strong>Project 1</strong>: Solivita Design</li>
+        </ul>
 
-    <section id="skills">
         <h2>🚀 Skills</h2>
         <ul>
-            <li><strong>Programming</strong>: C, C++</li>
-            <li><strong>Core Concepts</strong>: Data Structures and Algorithms</li>
-            <li><strong>Development</strong>: Web Development</li>
+            <li>C++</li>
+            <li>Data Structures and Algorithms</li>
         </ul>
-    </section>
 
-    <section id="find-me-online">
         <h2>🌐 Find Me Online</h2>
         <ul>
-            <li>🌟 <a href="https://github.com/88pramodbhat/Portfolio1.github.io" target="_blank">GitHub</a></li>
-            <li>💼 <a href="https://www.linkedin.com/in/pramod-bhat-00226329b" target="_blank">LinkedIn</a></li>
+            <li><a href="https://linkedin.com/in/your-linkedin-profile" target="_blank">LinkedIn</a></li>
         </ul>
-    </section>
 
-    <section id="academic-information">
-        <h2>🎓 Academic Information</h2>
-        <table>
-            <tr>
-                <th>Detail</th>
-                <th>Information</th>
-            </tr>
-            <tr>
-                <td><strong>Course Name</strong></td>
-                <td>Algorithmic Problem Solving</td>
-            </tr>
-            <tr>
-                <td><strong>Course Code</strong></td>
-                <td>24ECSC205</td>
-            </tr>
-            <tr>
-                <td><strong>Name</strong></td>
-                <td>Pramod Bhat</td>
-            </tr>
-            <tr>
-                <td><strong>SRN</strong></td>
-                <td>01FE23BCS296</td>
-            </tr>
-            <tr>
-                <td><strong>University</strong></td>
-                <td>KLE Technological University</td>
-            </tr>
-        </table>
-    </section>
+        <h2>📜 Portfolio Details</h2>
+        <dl>
+            <dt>Course Name</dt>
+            <dd>Algorithmic Problem Solving</dd>
 
-    <section id="portfolio-snapshot">
-        <h2>📸 Portfolio Snapshot</h2>
-        <img src="assets/image.jpg" alt="Project Screenshot" />
-    </section>
+            <dt>Name</dt>
+            <dd>pramod bhat</dd>
 
-    <section id="social-media">
-        <h2>📱 Social Media</h2>
-        <ul>
-            <li>- <a href="https://www.instagram.com/pramodbhat88" target="_blank">Instagram: pramodbhat88</a></li>
-            <li>- <a href="https://github.com/hiteshchoudhary/apihub" target="_blank">API Hub Repository</a></li>
-        </ul>
+            <dt>SRN</dt>
+            <dd>01fe23bcs296</dd>
+
+            <dt>Course Instructor</dt>
+            <dd>Prakash Hegde</dd>
+
+            <dt>University</dt>
+            <dd>KLE Technological University</dd>
+        </dl>
+
+        <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
     </section>
 
     <footer>
-        <p>&copy; 2024 Pramod Bhat. All rights reserved.</p>
+        © 2024 Pramod Bhat. Made with 💙 for technology and learning.
     </footer>
 </body>
 </html>
