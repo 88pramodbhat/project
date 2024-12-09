@@ -48,6 +48,10 @@
         button:hover {
             background-color: #005BB5;
         }
+        button:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+        }
         .fare {
             font-size: 20px;
             font-weight: bold;
@@ -59,6 +63,13 @@
             font-size: 16px;
             margin-top: 10px;
         }
+        .checkbox-section {
+            margin-top: 20px;
+            text-align: center;
+        }
+        .checkbox-section label {
+            font-size: 14px;
+        }
     </style>
 </head>
 <body>
@@ -66,7 +77,7 @@
         <h1>Dharwad-Hubballi BRTS Online Booking</h1>
     </header>
     <div class="container">
-        <form>
+        <form id="booking-form">
             <label for="from-stop">Select Starting Stop</label>
             <select id="from-stop" required>
                 <option value="" disabled selected>Choose your starting stop</option>
@@ -128,14 +139,25 @@
             <label for="fare">Fare</label>
             <div class="fare" id="fare">₹0</div>
 
+            <div class="checkbox-section">
+                <input type="checkbox" id="agree-checkbox">
+                <label for="agree-checkbox">I agree to the terms and conditions</label>
+            </div>
+
             <button type="submit" id="proceed-btn" disabled>Proceed to Payment</button>
         </form>
     </div>
 
     <script>
-        const fareTable = {
-            "Dharwad BRTS Terminal": { "Jubilee Circle": 6, "Court Circle": 6, "NTTF": 12 },
-            // Add all other fares here...
+          const fareTable = {
+            "Dharwad BRTS Terminal": {
+                "Jubilee Circle": 6, "Court Circle": 6, "NTTF": 12, "Hosa Yellapur Cross": 12,
+                "Toll Naka": 15, "Vidyagiri": 15, "Gandhinagar": 15, "Lakmanahalli": 18,
+                "Sattur": 18, "SDM Medical College": 18, "Navluru Railway Station": 18,
+                "KMF": 18, "Rayapur": 18, "ISKCON Temple": 25, "RTO": 25, "Navanagara": 25,
+                "Unakal Lake": 25, "BVB": 28, "Vidyanagar": 28, "KIMS": 28,
+                "HDMC": 28, "CBT": 30
+            }
         };
 
         const fromStop = document.getElementById("from-stop");
@@ -143,6 +165,7 @@
         const fareDisplay = document.getElementById("fare");
         const errorMessage = document.getElementById("error-message");
         const proceedBtn = document.getElementById("proceed-btn");
+        const agreeCheckbox = document.getElementById("agree-checkbox");
 
         function updateFare() {
             const start = fromStop.value;
@@ -157,7 +180,7 @@
                     errorMessage.textContent = "";
                     const fare = fareTable[start]?.[end] || fareTable[end]?.[start] || 0;
                     fareDisplay.textContent = `₹${fare}`;
-                    proceedBtn.disabled = fare === 0;
+                    proceedBtn.disabled = !agreeCheckbox.checked || fare === 0;
                 }
             } else {
                 fareDisplay.textContent = "₹0";
@@ -167,9 +190,10 @@
 
         fromStop.addEventListener("change", updateFare);
         toStop.addEventListener("change", updateFare);
-    </script>
-<a href="payment.html">Proceed to Payment</a>
 
-    
+        agreeCheckbox.addEventListener("change", () => {
+            proceedBtn.disabled = !agreeCheckbox.checked || fareDisplay.textContent === "₹0";
+        });
+    </script>
 </body>
 </html>
