@@ -31,7 +31,7 @@
             display: block;
             margin-top: 10px;
         }
-        select, input[type="text"], input[type="number"], button {
+        select, button {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -48,6 +48,12 @@
         button:hover {
             background-color: #005BB5;
         }
+        .fare {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0078D7;
+            margin-top: 10px;
+        }
         footer {
             text-align: center;
             margin-top: 20px;
@@ -61,9 +67,9 @@
         <h1>Dharwad-Hubballi BRTS Online Booking</h1>
     </header>
     <div class="container">
-        <form action="payment_gateway_placeholder" method="POST">
+        <form>
             <label for="from-stop">Select Starting Stop</label>
-            <select id="from-stop" name="from_stop" required>
+            <select id="from-stop" required>
                 <option value="" disabled selected>Choose your starting stop</option>
                 <option value="Dharwad BRTS Terminal">Dharwad BRTS Terminal</option>
                 <option value="Jubilee Circle">Jubilee Circle</option>
@@ -82,25 +88,16 @@
                 <option value="ISKCON Temple">ISKCON Temple</option>
                 <option value="RTO">RTO</option>
                 <option value="Navanagara">Navanagara</option>
-                <option value="APMC 3rd Gate">APMC 3rd Gate</option>
-                <option value="Shantinikethan">Shantinikethan</option>
-                <option value="Biridevarakoppa">Biridevarakoppa</option>
                 <option value="Unakal Lake">Unakal Lake</option>
-                <option value="Unakal Village">Unakal Village</option>
-                <option value="Unakal Cross">Unakal Cross</option>
                 <option value="BVB">BVB</option>
                 <option value="Vidyanagar">Vidyanagar</option>
                 <option value="KIMS">KIMS</option>
-                <option value="Hosur Regional Terminal">Hosur Regional Terminal</option>
-                <option value="Hosur Cross">Hosur Cross</option>
-                <option value="Hubballi Central Bus Terminal shivu">Hubballi Central Bus Terminal</option>
                 <option value="HDMC">HDMC</option>
-                <option value="DR. B R Ambedkar Circle">DR. B R Ambedkar Circle</option>
                 <option value="CBT">CBT</option>
             </select>
 
             <label for="to-stop">Select Destination Stop</label>
-            <select id="to-stop" name="to_stop" required>
+            <select id="to-stop" required>
                 <option value="" disabled selected>Choose your destination stop</option>
                 <option value="Dharwad BRTS Terminal">Dharwad BRTS Terminal</option>
                 <option value="Jubilee Circle">Jubilee Circle</option>
@@ -119,47 +116,52 @@
                 <option value="ISKCON Temple">ISKCON Temple</option>
                 <option value="RTO">RTO</option>
                 <option value="Navanagara">Navanagara</option>
-                <option value="APMC 3rd Gate">APMC 3rd Gate</option>
-                <option value="Shantinikethan">Shantinikethan</option>
-                <option value="Biridevarakoppa">Biridevarakoppa</option>
                 <option value="Unakal Lake">Unakal Lake</option>
-                <option value="Unakal Village">Unakal Village</option>
-                <option value="Unakal Cross">Unakal Cross</option>
                 <option value="BVB">BVB</option>
                 <option value="Vidyanagar">Vidyanagar</option>
                 <option value="KIMS">KIMS</option>
-                <option value="Hosur Regional Terminal">Hosur Regional Terminal</option>
-                <option value="Hosur Cross">Hosur Cross</option>
-                <option value="Hubballi Central Bus Terminal shivu">Hubballi Central Bus Terminal</option>
                 <option value="HDMC">HDMC</option>
-                <option value="DR. B R Ambedkar Circle">DR. B R Ambedkar Circle</option>
                 <option value="CBT">CBT</option>
             </select>
 
-            <label for="date">Travel Date</label>
-            <input type="date" id="date" name="travel_date" required>
-
-            <label for="passengers">Number of Passengers</label>
-            <input type="number" id="passengers" name="passengers" min="1" max="10" required>
+            <label for="fare">Fare</label>
+            <div class="fare" id="fare">₹0</div>
 
             <button type="submit">Proceed to Payment</button>
         </form>
     </div>
 
     <script>
-        const fromStop = document.getElementById('from-stop');
-        const toStop = document.getElementById('to-stop');
+        // Fare Table
+        const fareTable = {
+            "Dharwad BRTS Terminal": {
+                "Jubilee Circle": 6, "Court Circle": 6, "NTTF": 12, "Hosa Yellapur Cross": 12,
+                "Toll Naka": 15, "Vidyagiri": 15, "Gandhinagar": 15, "Lakmanahalli": 18,
+                "Sattur": 18, "SDM Medical College": 18, "Navluru Railway Station": 18,
+                "KMF": 18, "Rayapur": 18, "ISKCON Temple": 25, "RTO": 25, "Navanagara": 25,
+                "Unakal Lake": 25, "BVB": 28, "Vidyanagar": 28, "KIMS": 28,
+                "HDMC": 28, "CBT": 30
+            }
+        };
 
-        fromStop.addEventListener('change', () => {
-            const selectedValue = fromStop.value;
+        const fromStop = document.getElementById("from-stop");
+        const toStop = document.getElementById("to-stop");
+        const fareDisplay = document.getElementById("fare");
 
-            Array.from(toStop.options).forEach(option => {
-                option.disabled = option.value === selectedValue;
-            });
-        });
+        function updateFare() {
+            const start = fromStop.value;
+            const end = toStop.value;
+
+            if (start && end) {
+                const fare = fareTable[start]?.[end] || fareTable[end]?.[start] || 0;
+                fareDisplay.textContent = `₹${fare}`;
+            } else {
+                fareDisplay.textContent = "₹0";
+            }
+        }
+
+        fromStop.addEventListener("change", updateFare);
+        toStop.addEventListener("change", updateFare);
     </script>
-    <footer>
-        © 2024 Dharwad-Hubballi BRTS Online Booking
-    </footer>
 </body>
 </html>
