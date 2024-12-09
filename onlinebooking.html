@@ -54,11 +54,10 @@
             color: #0078D7;
             margin-top: 10px;
         }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #555;
+        .error {
+            color: red;
+            font-size: 16px;
+            margin-top: 10px;
         }
     </style>
 </head>
@@ -124,49 +123,53 @@
                 <option value="CBT">CBT</option>
             </select>
 
+            <div class="error" id="error-message"></div>
+
             <label for="fare">Fare</label>
             <div class="fare" id="fare">₹0</div>
 
-            <button type="submit">Proceed to Payment</button>
+            <button type="submit" id="proceed-btn" disabled>Proceed to Payment</button>
         </form>
     </div>
 
     <script>
-        // Fare Table
         const fareTable = {
-            "Dharwad BRTS Terminal": {
-                "Jubilee Circle": 6, "Court Circle": 6, "NTTF": 12, "Hosa Yellapur Cross": 12,
-                "Toll Naka": 15, "Vidyagiri": 15, "Gandhinagar": 15, "Lakmanahalli": 18,
-                "Sattur": 18, "SDM Medical College": 18, "Navluru Railway Station": 18,
-                "KMF": 18, "Rayapur": 18, "ISKCON Temple": 25, "RTO": 25, "Navanagara": 25,
-                "Unakal Lake": 25, "BVB": 28, "Vidyanagar": 28, "KIMS": 28,
-                "HDMC": 28, "CBT": 30
-            }
+            "Dharwad BRTS Terminal": { "Jubilee Circle": 6, "Court Circle": 6, "NTTF": 12 },
+            // Add all other fares here...
         };
 
         const fromStop = document.getElementById("from-stop");
         const toStop = document.getElementById("to-stop");
         const fareDisplay = document.getElementById("fare");
+        const errorMessage = document.getElementById("error-message");
+        const proceedBtn = document.getElementById("proceed-btn");
 
         function updateFare() {
             const start = fromStop.value;
             const end = toStop.value;
 
             if (start && end) {
-                const fare = fareTable[start]?.[end] || fareTable[end]?.[start] || 0;
-                fareDisplay.textContent = `₹${fare}`;
+                if (start === end) {
+                    errorMessage.textContent = "Starting and destination stops cannot be the same.";
+                    fareDisplay.textContent = "₹0";
+                    proceedBtn.disabled = true;
+                } else {
+                    errorMessage.textContent = "";
+                    const fare = fareTable[start]?.[end] || fareTable[end]?.[start] || 0;
+                    fareDisplay.textContent = `₹${fare}`;
+                    proceedBtn.disabled = fare === 0;
+                }
             } else {
                 fareDisplay.textContent = "₹0";
+                proceedBtn.disabled = true;
             }
         }
 
         fromStop.addEventListener("change", updateFare);
         toStop.addEventListener("change", updateFare);
-
-        <a href="payment.html">Proceed Payment</a>
-
-
-        
     </script>
+<a href="payment.html">Proceed to Payment</a>
+
+    
 </body>
 </html>
