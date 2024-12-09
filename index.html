@@ -3,168 +3,165 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Pramod Bhat</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>BRTS Online Booking</title>
     <style>
-        /* General Reset */
-        * {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
-
-        body {
-            font-family: 'Poppins', sans-serif;
-            line-height: 1.6;
-            background-color: #f4f4f9;
-            color: #333;
-            padding: 0 20px;
-        }
-
         header {
-            text-align: center;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
+            background-color: #0078D7;
             color: white;
-            padding: 50px 20px;
-            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
         }
-
-        header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        header p {
-            font-size: 1.2rem;
-            font-style: italic;
-        }
-
-        section {
-            max-width: 800px;
-            margin: 40px auto;
+        .container {
+            max-width: 900px;
+            margin: 20px auto;
             background: white;
             border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             padding: 20px;
         }
-
-        h2 {
-            margin-bottom: 20px;
-            font-size: 1.8rem;
-            color: #6a11cb;
-            border-bottom: 2px solid #6a11cb;
-            display: inline-block;
-        }
-
-        ul {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-
-        ul li {
-            padding: 10px;
-            margin-bottom: 10px;
-            background: #f4f4f9;
-            border-radius: 5px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        ul li strong {
-            color: #2575fc;
-        }
-
-        a {
-            text-decoration: none;
-            color: #2575fc;
-            transition: color 0.3s;
-        }
-
-        a:hover {
-            color: #6a11cb;
-        }
-
-        dl dt {
+        label {
+            font-size: 18px;
             font-weight: bold;
+            display: block;
             margin-top: 10px;
-            color: #2575fc;
         }
-
-        dl dd {
-            margin-left: 20px;
-            margin-bottom: 10px;
-        }
-
-        blockquote {
-            font-style: italic;
-            color: #555;
-            background: #f4f4f9;
-            padding: 15px 20px;
-            border-left: 4px solid #6a11cb;
-            margin: 20px 0;
+        select, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
             border-radius: 5px;
         }
-
-        /* Footer for extra polish */
+        button {
+            background-color: #0078D7;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #005BB5;
+        }
+        .fare {
+            font-size: 20px;
+            font-weight: bold;
+            color: #0078D7;
+            margin-top: 10px;
+        }
         footer {
             text-align: center;
-            margin-top: 40px;
-            padding: 20px 0;
-            font-size: 0.9rem;
-            color: #aaa;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #555;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Hello, I'm Pramod Bhat 👋</h1>
-        <p>I am passionate about technology and problem-solving</p>
+        <h1>Dharwad-Hubballi BRTS Online Booking</h1>
     </header>
+    <div class="container">
+        <form>
+            <label for="from-stop">Select Starting Stop</label>
+            <select id="from-stop" required>
+                <option value="" disabled selected>Choose your starting stop</option>
+                <option value="Dharwad BRTS Terminal">Dharwad BRTS Terminal</option>
+                <option value="Jubilee Circle">Jubilee Circle</option>
+                <option value="Court Circle">Court Circle</option>
+                <option value="NTTF">NTTF</option>
+                <option value="Hosa Yellapur Cross">Hosa Yellapur Cross</option>
+                <option value="Toll Naka">Toll Naka</option>
+                <option value="Vidyagiri">Vidyagiri</option>
+                <option value="Gandhinagar">Gandhinagar</option>
+                <option value="Lakmanahalli">Lakmanahalli</option>
+                <option value="Sattur">Sattur</option>
+                <option value="SDM Medical College">SDM Medical College</option>
+                <option value="Navluru Railway Station">Navluru Railway Station</option>
+                <option value="KMF">KMF</option>
+                <option value="Rayapur">Rayapur</option>
+                <option value="ISKCON Temple">ISKCON Temple</option>
+                <option value="RTO">RTO</option>
+                <option value="Navanagara">Navanagara</option>
+                <option value="Unakal Lake">Unakal Lake</option>
+                <option value="BVB">BVB</option>
+                <option value="Vidyanagar">Vidyanagar</option>
+                <option value="KIMS">KIMS</option>
+                <option value="HDMC">HDMC</option>
+                <option value="CBT">CBT</option>
+            </select>
 
-    <section>
-        <h2>🛠️ Projects</h2>
-        <ul>
-            <li><strong>Project 1</strong>: Solivita Design</li>
-        </ul>
+            <label for="to-stop">Select Destination Stop</label>
+            <select id="to-stop" required>
+                <option value="" disabled selected>Choose your destination stop</option>
+                <option value="Dharwad BRTS Terminal">Dharwad BRTS Terminal</option>
+                <option value="Jubilee Circle">Jubilee Circle</option>
+                <option value="Court Circle">Court Circle</option>
+                <option value="NTTF">NTTF</option>
+                <option value="Hosa Yellapur Cross">Hosa Yellapur Cross</option>
+                <option value="Toll Naka">Toll Naka</option>
+                <option value="Vidyagiri">Vidyagiri</option>
+                <option value="Gandhinagar">Gandhinagar</option>
+                <option value="Lakmanahalli">Lakmanahalli</option>
+                <option value="Sattur">Sattur</option>
+                <option value="SDM Medical College">SDM Medical College</option>
+                <option value="Navluru Railway Station">Navluru Railway Station</option>
+                <option value="KMF">KMF</option>
+                <option value="Rayapur">Rayapur</option>
+                <option value="ISKCON Temple">ISKCON Temple</option>
+                <option value="RTO">RTO</option>
+                <option value="Navanagara">Navanagara</option>
+                <option value="Unakal Lake">Unakal Lake</option>
+                <option value="BVB">BVB</option>
+                <option value="Vidyanagar">Vidyanagar</option>
+                <option value="KIMS">KIMS</option>
+                <option value="HDMC">HDMC</option>
+                <option value="CBT">CBT</option>
+            </select>
 
-        <h2>🚀 Skills</h2>
-        <ul>
-            <li>C++</li>
-            <li>Data Structures and Algorithms</li>
-        </ul>
+            <label for="fare">Fare</label>
+            <div class="fare" id="fare">₹0</div>
 
-        <h2>🌐 Find Me Online</h2>
-        <ul>
-           <li><a href="https://www.linkedin.com/in/pramod-bhat-267a42340/" target="_blank">LinkedIn</a></li>
+            <button type="submit">Proceed to Payment</button>
+        </form>
+    </div>
 
-            <li><a href="https://www.instagram.com/pramodbhat88/"target="_blank">Instagram</a>></li>
+    <script>
+        // Fare Table
+        const fareTable = {
+            "Dharwad BRTS Terminal": {
+                "Jubilee Circle": 6, "Court Circle": 6, "NTTF": 12, "Hosa Yellapur Cross": 12,
+                "Toll Naka": 15, "Vidyagiri": 15, "Gandhinagar": 15, "Lakmanahalli": 18,
+                "Sattur": 18, "SDM Medical College": 18, "Navluru Railway Station": 18,
+                "KMF": 18, "Rayapur": 18, "ISKCON Temple": 25, "RTO": 25, "Navanagara": 25,
+                "Unakal Lake": 25, "BVB": 28, "Vidyanagar": 28, "KIMS": 28,
+                "HDMC": 28, "CBT": 30
+            }
+        };
 
-           <li> <a href="onlinebooking.html">online booking system</a></li> 
-        </ul>
+        const fromStop = document.getElementById("from-stop");
+        const toStop = document.getElementById("to-stop");
+        const fareDisplay = document.getElementById("fare");
 
-        <h2>📜 Portfolio Details</h2>
-        <dl>
-            <dt>Course Name</dt>
-            <dd>Algorithmic Problem Solving</dd>
+        function updateFare() {
+            const start = fromStop.value;
+            const end = toStop.value;
 
-            <dt>Name</dt>
-            <dd>pramod bhat</dd>
+            if (start && end) {
+                const fare = fareTable[start]?.[end] || fareTable[end]?.[start] || 0;
+                fareDisplay.textContent = `₹${fare}`;
+            } else {
+                fareDisplay.textContent = "₹0";
+            }
+        }
 
-            <dt>SRN</dt>
-            <dd>01fe23bcs296</dd>
-
-            <dt>Course Instructor</dt>
-            <dd>Prakash Hegde</dd>
-
-            <dt>University</dt>
-            <dd>KLE Technological University</dd>
-        </dl>
-
-        <blockquote>“The only way to do great work is to love what you do.” – Steve Jobs</blockquote>
-    </section>
-
-    <footer>
-        © 2024 Pramod Bhat. Made with 💙 for technology and learning.
-    </footer>
+        fromStop.addEventListener("change", updateFare);
+        toStop.addEventListener("change", updateFare);
+    </script>
 </body>
 </html>
