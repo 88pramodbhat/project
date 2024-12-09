@@ -65,21 +65,75 @@
             <label for="from-stop">Select Starting Stop</label>
             <select id="from-stop" name="from_stop" required>
                 <option value="" disabled selected>Choose your starting stop</option>
-                <option>Dharwad BRTS Terminal</option>
-                <option>Jubilee Circle</option>
-                <option>Court Circle</option>
-                <!-- Add other stops here -->
-                <option>CBT Hubballi</option>
+                <option value="Dharwad BRTS Terminal">Dharwad BRTS Terminal</option>
+                <option value="Jubilee Circle">Jubilee Circle</option>
+                <option value="Court Circle">Court Circle</option>
+                <option value="NTTF">NTTF</option>
+                <option value="Hosa Yellapur Cross">Hosa Yellapur Cross</option>
+                <option value="Toll Naka">Toll Naka</option>
+                <option value="Vidyagiri">Vidyagiri</option>
+                <option value="Gandhinagar">Gandhinagar</option>
+                <option value="Lakmanahalli">Lakmanahalli</option>
+                <option value="Sattur">Sattur</option>
+                <option value="SDM Medical College">SDM Medical College</option>
+                <option value="Navluru Railway Station">Navluru Railway Station</option>
+                <option value="KMF">KMF</option>
+                <option value="Rayapur">Rayapur</option>
+                <option value="ISKCON Temple">ISKCON Temple</option>
+                <option value="RTO">RTO</option>
+                <option value="Navanagara">Navanagara</option>
+                <option value="APMC 3rd Gate">APMC 3rd Gate</option>
+                <option value="Shantinikethan">Shantinikethan</option>
+                <option value="Biridevarakoppa">Biridevarakoppa</option>
+                <option value="Unakal Lake">Unakal Lake</option>
+                <option value="Unakal Village">Unakal Village</option>
+                <option value="Unakal Cross">Unakal Cross</option>
+                <option value="BVB">BVB</option>
+                <option value="Vidyanagar">Vidyanagar</option>
+                <option value="KIMS">KIMS</option>
+                <option value="Hosur Regional Terminal">Hosur Regional Terminal</option>
+                <option value="Hosur Cross">Hosur Cross</option>
+                <option value="Hubballi Central Bus Terminal shivu">Hubballi Central Bus Terminal</option>
+                <option value="HDMC">HDMC</option>
+                <option value="DR. B R Ambedkar Circle">DR. B R Ambedkar Circle</option>
+                <option value="CBT">CBT</option>
             </select>
 
             <label for="to-stop">Select Destination Stop</label>
             <select id="to-stop" name="to_stop" required>
                 <option value="" disabled selected>Choose your destination stop</option>
-                <option>Dharwad BRTS Terminal</option>
-                <option>Jubilee Circle</option>
-                <option>Court Circle</option>
-                <!-- Add other stops here -->
-                <option>CBT Hubballi</option>
+                <option value="Dharwad BRTS Terminal">Dharwad BRTS Terminal</option>
+                <option value="Jubilee Circle">Jubilee Circle</option>
+                <option value="Court Circle">Court Circle</option>
+                <option value="NTTF">NTTF</option>
+                <option value="Hosa Yellapur Cross">Hosa Yellapur Cross</option>
+                <option value="Toll Naka">Toll Naka</option>
+                <option value="Vidyagiri">Vidyagiri</option>
+                <option value="Gandhinagar">Gandhinagar</option>
+                <option value="Lakmanahalli">Lakmanahalli</option>
+                <option value="Sattur">Sattur</option>
+                <option value="SDM Medical College">SDM Medical College</option>
+                <option value="Navluru Railway Station">Navluru Railway Station</option>
+                <option value="KMF">KMF</option>
+                <option value="Rayapur">Rayapur</option>
+                <option value="ISKCON Temple">ISKCON Temple</option>
+                <option value="RTO">RTO</option>
+                <option value="Navanagara">Navanagara</option>
+                <option value="APMC 3rd Gate">APMC 3rd Gate</option>
+                <option value="Shantinikethan">Shantinikethan</option>
+                <option value="Biridevarakoppa">Biridevarakoppa</option>
+                <option value="Unakal Lake">Unakal Lake</option>
+                <option value="Unakal Village">Unakal Village</option>
+                <option value="Unakal Cross">Unakal Cross</option>
+                <option value="BVB">BVB</option>
+                <option value="Vidyanagar">Vidyanagar</option>
+                <option value="KIMS">KIMS</option>
+                <option value="Hosur Regional Terminal">Hosur Regional Terminal</option>
+                <option value="Hosur Cross">Hosur Cross</option>
+                <option value="Hubballi Central Bus Terminal shivu">Hubballi Central Bus Terminal</option>
+                <option value="HDMC">HDMC</option>
+                <option value="DR. B R Ambedkar Circle">DR. B R Ambedkar Circle</option>
+                <option value="CBT">CBT</option>
             </select>
 
             <label for="date">Travel Date</label>
@@ -88,12 +142,22 @@
             <label for="passengers">Number of Passengers</label>
             <input type="number" id="passengers" name="passengers" min="1" max="10" required>
 
-            <label for="contact">Contact Number</label>
-            <input type="text" id="contact" name="contact" placeholder="Enter your mobile number" required>
-
             <button type="submit">Proceed to Payment</button>
         </form>
     </div>
+
+    <script>
+        const fromStop = document.getElementById('from-stop');
+        const toStop = document.getElementById('to-stop');
+
+        fromStop.addEventListener('change', () => {
+            const selectedValue = fromStop.value;
+
+            Array.from(toStop.options).forEach(option => {
+                option.disabled = option.value === selectedValue;
+            });
+        });
+    </script>
     <footer>
         © 2024 Dharwad-Hubballi BRTS Online Booking
     </footer>
