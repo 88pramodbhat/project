@@ -3,165 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BRTS Online Booking</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f8ff;
-            margin: 0;
-            padding: 0;
-        }
-        header {
-            background-color: #0078D7;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-        .container {
-            max-width: 900px;
-            margin: 20px auto;
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            padding: 20px;
-        }
-        label {
-            font-size: 18px;
-            font-weight: bold;
-            display: block;
-            margin-top: 10px;
-        }
-        select, button {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            font-size: 16px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-        button {
-            background-color: #0078D7;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #005BB5;
-        }
-        .fare {
-            font-size: 20px;
-            font-weight: bold;
-            color: #0078D7;
-            margin-top: 10px;
-        }
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            font-size: 14px;
-            color: #555;
-        }
-    </style>
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
-        <h1>Dharwad-Hubballi BRTS Online Booking</h1>
+        <h1>MY NAME IS PRAMOD👋</h1>
     </header>
-    <div class="container">
-        <form>
-            <label for="from-stop">Select Starting Stop</label>
-            <select id="from-stop" required>
-                <option value="" disabled selected>Choose your starting stop</option>
-                <option value="Dharwad BRTS Terminal">Dharwad BRTS Terminal</option>
-                <option value="Jubilee Circle">Jubilee Circle</option>
-                <option value="Court Circle">Court Circle</option>
-                <option value="NTTF">NTTF</option>
-                <option value="Hosa Yellapur Cross">Hosa Yellapur Cross</option>
-                <option value="Toll Naka">Toll Naka</option>
-                <option value="Vidyagiri">Vidyagiri</option>
-                <option value="Gandhinagar">Gandhinagar</option>
-                <option value="Lakmanahalli">Lakmanahalli</option>
-                <option value="Sattur">Sattur</option>
-                <option value="SDM Medical College">SDM Medical College</option>
-                <option value="Navluru Railway Station">Navluru Railway Station</option>
-                <option value="KMF">KMF</option>
-                <option value="Rayapur">Rayapur</option>
-                <option value="ISKCON Temple">ISKCON Temple</option>
-                <option value="RTO">RTO</option>
-                <option value="Navanagara">Navanagara</option>
-                <option value="Unakal Lake">Unakal Lake</option>
-                <option value="BVB">BVB</option>
-                <option value="Vidyanagar">Vidyanagar</option>
-                <option value="KIMS">KIMS</option>
-                <option value="HDMC">HDMC</option>
-                <option value="CBT">CBT</option>
-            </select>
 
-            <label for="to-stop">Select Destination Stop</label>
-            <select id="to-stop" required>
-                <option value="" disabled selected>Choose your destination stop</option>
-                <option value="Dharwad BRTS Terminal">Dharwad BRTS Terminal</option>
-                <option value="Jubilee Circle">Jubilee Circle</option>
-                <option value="Court Circle">Court Circle</option>
-                <option value="NTTF">NTTF</option>
-                <option value="Hosa Yellapur Cross">Hosa Yellapur Cross</option>
-                <option value="Toll Naka">Toll Naka</option>
-                <option value="Vidyagiri">Vidyagiri</option>
-                <option value="Gandhinagar">Gandhinagar</option>
-                <option value="Lakmanahalli">Lakmanahalli</option>
-                <option value="Sattur">Sattur</option>
-                <option value="SDM Medical College">SDM Medical College</option>
-                <option value="Navluru Railway Station">Navluru Railway Station</option>
-                <option value="KMF">KMF</option>
-                <option value="Rayapur">Rayapur</option>
-                <option value="ISKCON Temple">ISKCON Temple</option>
-                <option value="RTO">RTO</option>
-                <option value="Navanagara">Navanagara</option>
-                <option value="Unakal Lake">Unakal Lake</option>
-                <option value="BVB">BVB</option>
-                <option value="Vidyanagar">Vidyanagar</option>
-                <option value="KIMS">KIMS</option>
-                <option value="HDMC">HDMC</option>
-                <option value="CBT">CBT</option>
-            </select>
+    <main>
+        <section id="projects">
+            <h2>🛠️ Projects</h2>
+            <ul>
+          <li><strong>Project 1</strong>: Online booking system - <a href="online.html" target="_blank">GitHub</a></li>
 
-            <label for="fare">Fare</label>
-            <div class="fare" id="fare">₹0</div>
+                
+            </ul>
+        </section>
 
-            <button type="submit">Proceed to Payment</button>
-        </form>
-    </div>
+        <section id="skills">
+            <h2>🚀 Skills</h2>
+            <ul>
+                <li>C++,c</li>
+                <li>Data Structures and Algorithms</li>
+            </ul>
+        </section>
 
-    <script>
-        // Fare Table
-        const fareTable = {
-            "Dharwad BRTS Terminal": {
-                "Jubilee Circle": 6, "Court Circle": 6, "NTTF": 12, "Hosa Yellapur Cross": 12,
-                "Toll Naka": 15, "Vidyagiri": 15, "Gandhinagar": 15, "Lakmanahalli": 18,
-                "Sattur": 18, "SDM Medical College": 18, "Navluru Railway Station": 18,
-                "KMF": 18, "Rayapur": 18, "ISKCON Temple": 25, "RTO": 25, "Navanagara": 25,
-                "Unakal Lake": 25, "BVB": 28, "Vidyanagar": 28, "KIMS": 28,
-                "HDMC": 28, "CBT": 30
-            }
-        };
+        <section id="find-me-online">
+            <h2>🌐 Find Me Online</h2>
+            <ul>
+                <li><a href="https://www.instagram.com/pramodbhat88/">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/pramod-bhat-267a42340/">LinkedIn</a></li>
+            </ul>
+        </section>
 
-        const fromStop = document.getElementById("from-stop");
-        const toStop = document.getElementById("to-stop");
-        const fareDisplay = document.getElementById("fare");
+        <section id="portfolio-topic">
+            <h2>📄 Portfolio Topic</h2>
+            <dl>
+                <dt>Course Name</dt>
+                <dd>Algorithmic Problem Solving</dd>
 
-        function updateFare() {
-            const start = fromStop.value;
-            const end = toStop.value;
+                <dt>Name</dt>
+                <dd>pramod bhat</dd>
 
-            if (start && end) {
-                const fare = fareTable[start]?.[end] || fareTable[end]?.[start] || 0;
-                fareDisplay.textContent = `₹${fare}`;
-            } else {
-                fareDisplay.textContent = "₹0";
-            }
-        }
+                <dt>SRN</dt>
+                <dd>01fe23bcs296</dd>
 
-        fromStop.addEventListener("change", updateFare);
-        toStop.addEventListener("change", updateFare);
-    </script>
+                <dt>Course Instructor</dt>
+                <dd>prakash hegade</dd>
+
+                <dt>University</dt>
+                <dd>kle technological unversity</dd>
+        </section>
+    </main>
 </body>
 </html>
